@@ -220,10 +220,13 @@ H3 {
 }
 /* Style the APOD modal container */
 #apod-modal-container {
+    display: flex;
+    flex-direction: row;
     max-width: 90%;
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 20px;
+    padding: 0px 40px;
     text-align: center;
     background-color: white;
 }
@@ -235,24 +238,32 @@ H3 {
     border: 2px solid #333;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+#modalText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 #apod-modal-title {
     font-size: 24px;
-    margin-top: 10px;
+    margin: 15px 20px;
     color: #333;
+    text-align: left;
 }
 #apod-modal-date {
     font-size: 16px;
-    margin-top: 5px;
+    margin: 5px 20px;
     color: #555;
+    align-self: flex-start;
 }
 #apod-modal-description {
     font-size: 18px;
-    margin-top: 20px;
+    margin: 20px;
     text-align: left;
     color: #666;
 }
 #refreshButton {
-    margin-bottom: 30px;
+    margin: 30px;
+    align-self: center;
 }
 #nasaResources {
     background-color: white;
