@@ -1,4 +1,5 @@
-const apiKey = "GYiSRpUWuQgABchLBHyI2VAd3mF9tXBd7IHtXFfw"; // Replace with your APOD API key
+const apiKey = "GYiSRpUWuQgABchLBHyI2VAd3mF9tXBd7IHtXFfw"; 
+
 const apodModalImage = document.getElementById("apod-modal-image");
 const apodModalTitle = document.getElementById("apod-modal-title");
 const apodModalDate = document.getElementById("apod-modal-date");
@@ -44,12 +45,10 @@ function openModal() {
   const modal = document.getElementById("apod-modal");
   modal.style.display = "block";
 
-  // Fetch a random APOD using the APOD API
   const randomDate = getRandomAPODDate();
   const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${randomDate}`;
 
-  // Get references to the modal elements
-  const apodModalContainer = document.getElementById("apod-modal-container");
+   const apodModalContainer = document.getElementById("apod-modal-container");
 
   // Fetch and update APOD data
   fetch(apiUrl)
@@ -73,8 +72,8 @@ function closeModal() {
   modal.style.display = "none";
 }
 
+// Fetch a new random APOD using the APOD API
 function refreshAPOD() {
-  // Fetch a new random APOD using the APOD API
   const randomDate = getRandomAPODDate();
   const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${randomDate}`;
 
@@ -93,5 +92,3 @@ function refreshAPOD() {
         "An error occurred while fetching the APOD data.";
     });
 }
-
-// galaxy images appear on scroll

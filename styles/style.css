@@ -213,7 +213,7 @@ H3 {
     animation-name: fadeIn;
     animation-duration: 0.4s
 }
-/* Style the modal content */
+
 .modal-content {
     background-color: rgba(255, 255, 255, 0.5);
     padding: 20px;
@@ -228,7 +228,7 @@ H3 {
     animation-duration: 0.4s
 }
 
-/* Style the close button */
+
 .close {
     position: absolute;
     top: 20px;
@@ -248,7 +248,6 @@ H3 {
     background-color: white;
 }
 /* Style the image within the modal */
-
 #apod-modal-image {
     max-width: 70%;
     height: auto;
@@ -257,22 +256,16 @@ H3 {
     border: 2px solid #333;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
-/* Style the APOD modal title */
 #apod-modal-title {
     font-size: 24px;
     margin-top: 10px;
     color: #333;
 }
-
-/* Style the APOD modal date */
 #apod-modal-date {
     font-size: 16px;
     margin-top: 5px;
     color: #555;
 }
-
-/* Style the APOD modal description */
 #apod-modal-description {
     font-size: 18px;
     margin-top: 20px;
@@ -300,6 +293,7 @@ H3 {
     flex-direction: row;
     justify-content: space-evenly;
     padding-left: 30px;
+    object-fit: cover;
 }
 .nasa-image {
     max-width: 22dvw;
