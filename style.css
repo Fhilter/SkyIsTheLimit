@@ -1,0 +1,314 @@
+#parallax {  
+     height: 70vh;
+     max-width: 100vw;
+     text-align: center;
+     padding-top: 18%;
+     padding-bottom: 0px;
+}
+#parallax h1 {
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 65px;   
+}
+#logo {
+    height: 150px;
+    width: 150px;   
+}
+body {
+padding: 0px;
+margin: 0px;
+}
+#container {
+    background-color: whitesmoke;
+    height: max-content;
+    display: block;
+    padding: 0px;
+    margin: 0px;
+}
+.intro {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    background-color: black;
+    height: 110%;
+    width: 100%;
+}
+.intro h2 {
+    padding-top: 40px;
+    text-align: center;
+    color: antiquewhite;
+}
+#milkyWay {
+   max-height: 90%;
+   max-width: 90%;
+   display: block;
+   margin: auto;
+   animation: breathe 10s infinite alternate;
+   object-fit: contain;
+}
+@keyframes breathe {
+    0% {
+        transform: scale(1); /* Start with normal size */
+    }
+    100% {
+        transform: scale(0.9); /* Zoom in slightly */
+    }
+}
+.introText {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 30px;
+    text-align: justify;
+}
+.introText p {
+    padding: 20px 20px;
+    color:black;
+}
+.row {
+    display: inline-block;
+    padding-left: 40px 40px;
+    margin: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+.row img{
+    width: 50dvw;
+    height: 60dvh;
+    border-radius: 10px;
+    margin: 0px 30px;
+    float: left;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+.row p{
+    padding: 20px;
+    margin-top: 8%;
+    color:black;
+}
+/* The overlay effect - lays on top of the container and over the image */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* When you mouse over the container, fade in the overlay title */
+  .row:hover .overlay {
+    opacity: 1;
+  }
+h2 {
+    padding-top: 10px;
+}
+.voyagerSection {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin: 30px;
+    padding: 40px;
+}
+.voyagerSection p {
+    margin: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#apod-box {
+ display: flex;
+ height: max-content;
+ width: 100%;
+ margin-bottom: 40px;
+}
+#APOD {
+ color: rgb(44, 44, 44);
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ background-color: whitesmoke ;
+ width: 100%;
+ margin-top: 0px;
+padding-bottom: 50px;
+}
+#boxTitle {
+    text-align: center;
+    padding: 30px;
+
+}
+#apod-image {
+    display: block;
+    margin: 40px;
+    width: 900px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+H3 {
+    text-align: left;
+    padding-left: 30px;
+    padding-top: 30px;
+
+}
+#apod-date{
+    text-align: left;
+    padding-left: 30px;
+    font-size: 12;
+    font-style: italic;
+    color: #404040;
+}
+#apod-container {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    align-items: center;
+    width: 90vw;
+    height: 700px;
+    background-color: white;
+    
+}
+#apod-description{
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+#apod-text {
+    height: fit-content;
+    background-color: white;
+    color: black;
+    padding-bottom: 30px;
+}
+#buttonBox {
+ display: flex;
+ height: fit-content;
+ flex-direction: column;
+ align-items: center;
+}
+#apod-box button {
+    height: 50px;
+    width: 150px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+}
+#apod-box button:hover {
+
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+/* Style the modal content */
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-height: 100%; /* Limit the maximum height of the modal content */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+
+/* Style the close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 34px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Style the APOD modal container */
+#apod-modal-container {
+    max-width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: white;
+}
+/* Style the image within the modal */
+
+#apod-modal-image {
+    max-width: 70%;
+    height: auto;
+    object-fit: cover;
+    margin: 20px;
+    border: 2px solid #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Style the APOD modal title */
+#apod-modal-title {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Style the APOD modal date */
+#apod-modal-date {
+    font-size: 16px;
+    margin-top: 5px;
+    color: #555;
+}
+
+/* Style the APOD modal description */
+#apod-modal-description {
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: left;
+    color: #666;
+}
+#refreshButton {
+    margin-bottom: 30px;
+}
+#nasaResources {
+    background-color: white;
+}
+#nasaText {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 40px;
+    padding-left: 30px; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+#nasaText H2 {
+    margin: 0px;
+}
+#nasaImages {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 30px;
+}
+.nasa-image {
+    max-width: 22dvw;
+    cursor: pointer;
+}
+footer {
+    color: #404040;
+    margin-top: 30px;
+    height: 30px;
+    display: block;
+    text-align: center;
+}
