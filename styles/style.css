@@ -109,7 +109,7 @@ h2 {
 }
 #apod-box {
  display: flex;
- height: max-content;
+ height: 1000px;
  width: 100%;
 }
 #APOD {
@@ -126,7 +126,8 @@ padding-bottom: 5%;
 #apod-image {
     display: block;
     margin: 40px;
-    width: 900px;
+    max-width: 800px;
+    max-height: 750px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 H3 {
@@ -148,7 +149,7 @@ H3 {
     margin: auto;
     align-items: center;
     width: 90vw;
-    height: 700px;
+    height: 800px;
     background-color: white;
     
 }
