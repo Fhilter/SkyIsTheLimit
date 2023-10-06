@@ -109,8 +109,8 @@ area {
     margin-left: 5%;
 }
 .row img{
-    width: 60dvw;
-    height: 60dvh;
+    width: 60%;
+    height: 60%;
     border-radius: 10px;
     margin: 1% 30px;
     float: left;
