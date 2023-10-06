@@ -1,4 +1,4 @@
-const apiKey = "GYiSRpUWuQgABchLBHyI2VAd3mF9tXBd7IHtXFfw"; 
+const apiKey = "GYiSRpUWuQgABchLBHyI2VAd3mF9tXBd7IHtXFfw";
 
 const apodModalImage = document.getElementById("apod-modal-image");
 const apodModalTitle = document.getElementById("apod-modal-title");
@@ -48,7 +48,7 @@ function openModal() {
   const randomDate = getRandomAPODDate();
   const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${randomDate}`;
 
-   const apodModalContainer = document.getElementById("apod-modal-container");
+  const apodModalContainer = document.getElementById("apod-modal-container");
 
   // Fetch and update APOD data
   fetch(apiUrl)
@@ -92,3 +92,24 @@ function refreshAPOD() {
         "An error occurred while fetching the APOD data.";
     });
 }
+
+//Modal for solar system onclick on Milky Way image
+const modal = document.getElementById('myModal');
+const modalImage = document.getElementById('modalImage');
+const closeSSModal = document.getElementById('closeSSModal');
+
+
+const areas = document.querySelectorAll('area');
+
+areas.forEach(area => {
+    area.addEventListener('click', function() {
+      console.log("Area clicked!");
+        const imageSource = this.getAttribute('data-image');
+        modalImage.src = imageSource;
+        modal.style.display = 'block';
+    });
+});
+
+closeSSModal.addEventListener('click', function() {
+    modal.style.display = 'none';
+});

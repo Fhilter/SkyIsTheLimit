@@ -22,7 +22,7 @@
   </head>
   <body>
     <div id="parallax">
-      <img id="logo" src="./assets/logo.png" />
+      <img id="logo" src="./assets/logo.png" alt="logo" />
       <h1>TheSkyisTheLimit</h1>
     </div>
 
@@ -36,7 +36,17 @@
           src="./assets/milky-way-galaxy-topview_full_990.jpg"
           alt="Milky Way Galaxy"
           loading="lazy"
+          usemap="#milky-map"
         />
+        <map name="milky-map">
+          <area shape="circle" coords="520,480,400" alt="link 1" data-image="./assets/solar-system-planets-with-moons-education-vector-28076243.jpg">
+        </map>
+        <div id="myModal" class="modalSS">
+          <div class="modalSS-content">
+              <span id="closeSSModal" style="cursor: pointer;">&times;</span>
+              <img id="modalImage" src="" alt="Solar System image" />
+          </div>
+      </div>
       </div>
       <div class="introText">
         <p>
@@ -110,6 +120,7 @@
       <div>
         <div class="voyagerSection">
           <iframe
+            
             width="1060"
             height="415"
             src="https://www.youtube.com/embed/aR6oV8kJKf4?si=nFC8m9x02zCc5eiV"
@@ -123,12 +134,36 @@
             Of course these galaxies are, well, lightyears away and we will
             probably never reach them. The furthest man-made object from earth
             right now is the Voyager 1 probe. If you want to see what this
-            incredible spacecraft carries, you can pan around yourself in this
-            360 degree video. And make sure you visit the
-            <a href="https://voyager.jpl.nasa.gov/mission/status/">VOYAGER</a>
-            page on NASA's site to learn more about the journey and current
-            position of this probe.
+            incredible spacecraft carries, you can watch this 360 degree video
+            and pan around for yourself. If you want to know more, make sure you
+            visit the
+            <a href="https://voyager.jpl.nasa.gov/mission/status/"
+              >VOYAGER PROBE</a
+            >
+            page on NASA's site to learn more about this amazing journey, and
+            the current location of this probe.
           </p>
+        </div>
+        <div id="planetarium">
+          <p class="planetText">
+            While the Voyager probe is flying through space at 17 km/s, we're
+            stuck here on Terra Firma. The cameras on the probe constantly see
+            things from ever-changing angles, but for us, the sky looks pretty
+            much the same every night, depending on which hemisphere you're in
+            and the rotation of the earth. Seeing what Voyager has seen is truly
+            breath-taking, but even seeing the night sky away from man-made
+            lights is still a wonderful experience. <br /><br />
+            Are you interested in being an astronomer? You can pretend to do just that from right here, with this
+            intereactive planetarium from SkyLive. Have a look around and see if
+            you can spot anything you recognize!
+          </p>
+          <iframe
+            id="skyLive"
+            src="https://theskylive.com/planetarium#ra|14.36672120144436|dec|18.340421717937748|fov|80"
+            width="80%"
+            height="1000"
+            title="Sky Live Planetarium"
+          ></iframe>
         </div>
       </div>
     </div>

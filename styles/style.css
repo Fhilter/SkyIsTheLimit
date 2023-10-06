@@ -65,6 +65,40 @@ body {
     padding: 20px 20px;
     color: whitesmoke;
 }
+.modalSS {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modalSS-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+#modalImage {
+    width: 700px;
+    height: 700px;
+}
+#closeSSModal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 34px;
+    color: white;
+}
+area {
+    cursor: pointer;
+}
 .row {
     display: inline-block;
     margin: 30px;
@@ -95,10 +129,10 @@ h2 {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
-    padding: 40px;
+    padding: 2%;
 }
 .voyagerSection p {
-    margin: 30px;
+    margin: 2%;
     max-width: 50%;
     font-family: Arial, Helvetica, sans-serif;
     color: whitesmoke;
@@ -106,6 +140,18 @@ h2 {
 #voyagerModel {
     width: 100%;
     height: 400px;
+}
+#planetarium {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 4%;
+}
+.planetText {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 4%;
 }
 #apod-box {
  display: flex;
@@ -279,6 +325,7 @@ H3 {
 }
 #nasaText H2 {
     margin: 0px;
+    margin-bottom: 2%;
     color: black
 }
 #nasaImages {
@@ -289,8 +336,12 @@ H3 {
     object-fit: cover;
 }
 .nasa-image {
+    transition: transform .2s;
     max-width: 22dvw;
     cursor: pointer;
+}
+.nasa-image:hover {
+    transform:scale(1.1);
 }
 footer {
     color: antiquewhite;
