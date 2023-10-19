@@ -113,3 +113,22 @@ areas.forEach(area => {
 closeSSModal.addEventListener('click', function() {
     modal.style.display = 'none';
 });
+
+const handleScroll = () => {
+  const rows = document.querySelectorAll('.row');
+  const windowBottom = window.scrollY + window.innerHeight;
+
+  rows.forEach((row) => {
+    const rowTop = row.getBoundingClientRect().top + window.scrollY;
+
+    if (rowTop < windowBottom) {
+      row.classList.add('appear');
+    }
+  });
+}
+
+// Initial check for elements in view on page load
+handleScroll();
+
+// Listen for scroll events
+window.addEventListener('scroll', handleScroll);

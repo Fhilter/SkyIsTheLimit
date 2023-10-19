@@ -10,8 +10,8 @@
         background-image: url("./assets/background.jpg");
 
         /* Set a specific height */
-        height: 100%;
-        min-height: 500px;
+        height: 100vh;
+        
 
         /* Create the parallax scrolling effect */
         background-attachment: fixed;
@@ -40,88 +40,111 @@
           usemap="#milky-map"
         />
         <map name="milky-map">
-          <area shape="circle" coords="520,480,400" alt="link 1" data-image="./assets/solar-system-planets-with-moons-education-vector-28076243.jpg">
+          <area
+            shape="circle"
+            coords="520,480,400"
+            alt="link 1"
+            data-image="./assets/solar-system-planets-with-moons-education-vector-28076243.jpg"
+          />
         </map>
         <div id="myModal" class="modalSS">
           <div class="modalSS-content">
-              <span id="closeSSModal" style="cursor: pointer;">&times;</span>
-              <img id="modalImage" src="" alt="Solar System image" />
+            <span id="closeSSModal" style="cursor: pointer">&times;</span>
+            <img id="modalImage" src="" alt="Solar System image" />
+            <div class="sunText">
+              <p>
+                Our star, the Sun, is just one of hundreds of
+                billions of stars swirling within an enormous cosmic place called the
+                Milky Way Galaxy? The Milky Way is a huge collection of stars, dust
+                and gas. It's called a spiral galaxy because if you could view it from
+                the top or bottom, it would look like a spinning pinwheel. The Sun is
+                located on one of the spiral arms, about 25,000 light-years away from
+                the center of the galaxy. Even if you could travel at the speed of
+                light (300,000 kilometers, or 186,000 miles, per second), it would
+                take you about 25,000 years to reach the middle of the Milky Way.
+              </p>
+            </div>
           </div>
-      </div>
+        </div>
       </div>
       <div class="introText">
-        <p>
-          Did you know that our star, the Sun, is just one of hundreds of
-          billions of stars swirling within an enormous cosmic place called the
-          Milky Way Galaxy? The Milky Way is a huge collection of stars, dust
-          and gas. It’s called a spiral galaxy because if you could view it from
-          the top or bottom, it would look like a spinning pinwheel. The Sun is
-          located on one of the spiral arms, about 25,000 light-years away from
-          the center of the galaxy. Even if you could travel at the speed of
-          light (300,000 kilometers, or 186,000 miles, per second), it would
-          take you about 25,000 years to reach the middle of the Milky Way.
-        </p>
         <p>
           "Very cool," you say, "but do we live in the only galaxy?" Nope, there
           are billions in the universe that we can see, and possibly trillions
           more! Here are some other magnificent galaxies that we know of.
         </p>
       </div>
-      <div class="row">
-        <img
-          id="cigar"
-          src="./assets/m82_cigar.jpg"
-          alt="cigar galaxy"
-          loading="lazy"
-        />
-        <div>
-          <p></p>
-          <h2>The Cigar Galaxy</h2>
-          M82 Galaxy Messier 82 is a starburst galaxy approximately 12 million
-          light-years away in the constellation Ursa Major. It is the
-          second-largest member of the M81 Group, with the D₂₅ isophotal
-          diameter of 12.52 kiloparsecs.
+      <div class="galaxyContainer">
+        <div class="row">
+          <img
+            id="cigar"
+            src="./assets/m82_cigar.jpg"
+            alt="cigar galaxy"
+            loading="lazy"
+          />
+          <div id="galaxyText">
+            <p></p>
+            <h2>The Cigar Galaxy</h2>
+            M82 Galaxy Messier 82 is a starburst galaxy approximately 12 million
+            light-years away in the constellation Ursa Major. It is the
+            second-largest member of the M81 Group, with the D₂₅ isophotal
+            diameter of 12.52 kiloparsecs.
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <img
-          id="pinwheel"
-          src="./assets/m101_pinwheel.jpg"
-          alt="pinwheel galaxy"
-          loading="lazy"
-        />
-        <div>
-          <p></p>
-          <h2>The Pinwheel Galaxy</h2>
-          The Pinwheel Galaxy is a face-on spiral galaxy 21 million light-years
-          away from Earth in the constellation Ursa Major. It was discovered by
-          Pierre Méchain in 1781 and was communicated that year to Charles
-          Messier, who verified its position for inclusion in the Messier
-          Catalogue as one of its final entries.
+        <div class="row">
+          <img
+            id="pinwheel"
+            src="./assets/m101_pinwheel.jpg"
+            alt="pinwheel galaxy"
+            loading="lazy"
+          />
+          <div id="galaxyText">
+            <p></p>
+            <h2>The Pinwheel Galaxy</h2>
+            The Pinwheel Galaxy is a face-on spiral galaxy 21 million
+            light-years away from Earth in the constellation Ursa Major. It was
+            discovered by Pierre Méchain in 1781 and was communicated that year
+            to Charles Messier, who verified its position for inclusion in the
+            Messier Catalogue as one of its final entries.
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <img
-          id="sombrero"
-          src="./assets/m104_sombrero.jpg"
-          alt="sombrero galaxy"
-        />
-        <div>
-          <p></p>
-          <h2>The Sombrero Galaxy</h2>
-          The Sombrero Galaxy is a peculiar galaxy of unclear classification in
-          the constellation borders of Virgo and Corvus, being about 9.55
-          megaparsecs from the Milky Way galaxy. It is a member of the Virgo II
-          Groups, a series of galaxies and galaxy clusters strung out from the
-          southern edge of the Virgo Supercluster.
+        <div class="row">
+          <img
+            id="sombrero"
+            src="./assets/m104_sombrero.jpg"
+            alt="sombrero galaxy"
+          />
+          <div id="galaxyText">
+            <p>
+            <h2>The Sombrero Galaxy</h2>
+            The Sombrero Galaxy is a peculiar galaxy of unclear classification
+            in the constellation borders of Virgo and Corvus, being about 9.55
+            megaparsecs from the Milky Way galaxy. It is a member of the Virgo
+            II Groups, a series of galaxies and galaxy clusters strung out from
+            the southern edge of the Virgo Supercluster.
+          </p>
+          </div>
         </div>
       </div>
       <div>
         <div class="voyagerSection">
+          <iframe src="" frameborder="0">
+            <model-viewer src="./assets/Voyager.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1">
+              <div class="progress-bar hide" slot="progress-bar">
+                  <div class="update-bar"></div>
+              </div>
+              <button slot="ar-button" id="ar-button">
+                View in your space
+            </button>
+            <div id="ar-prompt">
+                <img src="./assets/ar_hand_prompt.png">
+            </div>
+          </model-viewer>
+          </iframe>
           <iframe
-            
+          id="voyagerVid"
             width="1060"
             height="415"
             src="https://www.youtube.com/embed/aR6oV8kJKf4?si=nFC8m9x02zCc5eiV"
@@ -132,12 +155,17 @@
             allowfullscreen
           ></iframe>
           <p id="Voyager">
-            Of course these galaxies are, well, lightyears away and we will
+            Of course these galaxies are, well, <a href="https://en.wikipedia.org/wiki/Light-year">LIGHTYEARS</a> away and we will
             probably never reach them. The furthest man-made object from earth
-            right now is the Voyager 1 probe. If you want to see what this
-            incredible spacecraft carries, you can watch this 360 degree video
-            and pan around for yourself. If you want to know more, make sure you
-            visit the
+            right now is the Voyager 1 probe. As of February 25, 2023, Voyager 1
+            was about 14.3 billion miles (23.1 billion kilometers) away
+            from Earth, which is approximately 0.002 light years. At its current
+            speed of about 38,000 miles per hour (61,000 kilometers per hour),
+            it would take approximately 17,000 years to travel one light year
+            away from Earth. 
+            If you want to see what this incredible spacecraft
+            carries, you can watch this 360 degree video and pan around for
+            yourself. If you want to know more, make sure you visit the
             <a href="https://voyager.jpl.nasa.gov/mission/status/"
               >VOYAGER PROBE</a
             >
@@ -154,9 +182,10 @@
             and the rotation of the earth. Seeing what Voyager has seen is truly
             breath-taking, but even seeing the night sky away from man-made
             lights is still a wonderful experience. <br /><br />
-            Are you interested in being an astronomer? You can pretend to do just that from right here, with this
-            intereactive planetarium from SkyLive. Have a look around and see if
-            you can spot anything you recognize!
+            Are you interested in being an astronomer? You can pretend to do
+            just that from right here, with this intereactive planetarium from
+            SkyLive. Have a look around and see if you can spot anything you
+            recognize!
           </p>
           <iframe
             id="skyLive"
