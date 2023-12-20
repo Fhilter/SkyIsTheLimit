@@ -1,3 +1,8 @@
+/* 
+#81B5F1 rgb(129, 181, 241) blue
+#F1BD81 rgb(241, 189, 129) orange
+*/
+
 #parallax {  
     display: flex;
     flex-direction: column;
@@ -18,18 +23,21 @@
     height: 150px;
     width: 150px;   
 }
-body {
+html, body {
     display: flex;
     flex-direction: column;
     padding: 0px;
     margin: 0px;
     background-color:#1a1a1a;
-}
+    width: 100%;
+    justify-content: center;
+    }
 #container {
     background-color: #1a1a1a;
     padding: 0px;
     margin: 0px;
     font-size: larger;
+    width: 100%;
 }
 .intro {
     display: flex;
@@ -43,7 +51,7 @@ body {
 .intro h2 {
     padding-top: 40px;
     text-align: center;
-    color: antiquewhite;
+    color: rgb(129, 181, 241);
 }
 #milkyWay {
    max-height: 90%;
@@ -52,25 +60,280 @@ body {
    margin: auto;
    animation: breathe 8s infinite alternate;
    object-fit: contain;
+   padding-bottom: 5%;
 }
 @keyframes breathe {
     0% {
-        transform: scale(1); /* Start with normal size */
+        transform: scale(1); 
     }
     100% {
-        transform: scale(0.9); /* Zoom in slightly */
+        transform: scale(0.9); 
     }
 }
-.introText {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: justify;
-}
-.introText p {
-    padding-top: 2%;
-    padding-left: 5%;
-    padding-right: 5%;
-    color: whitesmoke;
-}
+
+/*This is for the solarsystem orbits*/
+
+.sun {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(#f09819, #ff512f);
+    border-radius: 50%;
+    box-shadow: -4px 2px 56px orange;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .mercury_orbit {
+    width: 150px;
+    height: 150px;
+  }
+  .mercury {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: linear-gradient(#504e51, #97979f, #ceccd1, #b5a7a7);
+    position: absolute;
+    top: 44%;
+    left: 44%;
+    transform: translate(-50%, -50%);
+    animation: orbit1 4s linear infinite;
+  }
+  @keyframes orbit1 {
+    from {
+      transform: rotate(0deg) translateX(75px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(75px) rotate(-360deg);
+    }
+  }
+  .mercury_orbit,
+  .venus_orbit,
+  .earth_orbit,
+  .mars_orbit,
+  .jupiter_orbit,
+  .saturn_orbit,
+  .uranus_orbit,
+  .neptune_orbit {
+    border: 1px dotted #dd9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: transparent;
+  }
+  .venus_orbit {
+    height: 210px;
+    width: 210px;
+  }
+  .venus {
+    width: 29px;
+    height: 29px;
+    background: linear-gradient(#8b91a1, #bbb7ab, #ddd8d4, #efefef);
+    border-radius: 50%;
+    position: absolute;
+    top: 43%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+    animation: orbit2 8s linear infinite;
+  }
+  @keyframes orbit2 {
+    from {
+      transform: rotate(0deg) translateX(105px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(105px) rotate(-360deg);
+    }
+  }
+  .earth_orbit {
+    height: 300px;
+    width: 300px;
+  }
+  .earth {
+    height: 34px;
+    width: 34px;
+    background: url("../assets/earth_4k_stock_by_hameed_db5roja-fullview.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 44%;
+    left: 44%;
+    transform: translate(-50%, -50%);
+    animation: orbit3 12s linear infinite;
+  }
+  @keyframes orbit3 {
+    from {
+      transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+  }
+  .moon_orbit {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 0.8px dotted #dd9;
+    position: relative;
+    top: -20%;
+    left: -25%;
+    background: transparent;
+  }
+  .moon {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: -4px 2px 56px #fff;
+    position: absolute;
+    top: 42%;
+    left: 42%;
+    transform: translate(-50%, -50%);
+    animation: moon-orbit 4s linear infinite;
+  }
+  @keyframes moon-orbit {
+    from {
+      transform: rotate(0deg) translateX(24px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(24px) rotate(-360deg);
+    }
+  }
+  .mars_orbit {
+    height: 400px;
+    width: 400px;
+  }
+  .mars {
+    height: 23px;
+    width: 23px;
+    background: linear-gradient(
+      #99857a,
+      #c6785c,
+      #e27b58,
+      #ff9d6f,
+      #663926,
+      #8e6a5a
+    );
+    border-radius: 50%;
+    position: absolute;
+    top: 47%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    animation: orbit4 11s linear infinite;
+  }
+  @keyframes orbit4 {
+    from {
+      transform: rotate(0deg) translateX(200px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(200px) rotate(-360deg);
+    }
+  }
+  .jupiter_orbit {
+    height: 500px;
+    width: 500px;
+  }
+  .jupiter {
+    height: 48px;
+    width: 48px;
+    background: linear-gradient(
+      #404436,
+      #a79c86,
+      #d2cfda,
+      #d39c7e,
+      #90614d,
+      #c88b3a
+    );
+    border-radius: 50%;
+    position: absolute;
+    top: 46%;
+    left: 46%;
+    transform: translate(-50%, -50%);
+    animation: orbit5 6s linear infinite;
+  }
+  @keyframes orbit5 {
+    from {
+      transform: rotate(0deg) translateX(250px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(250px) rotate(-360deg);
+    }
+  }
+  .saturn_orbit {
+    height: 630px;
+    width: 630px;
+  }
+  .saturn {
+    height: 63px;
+    width: 63px;
+    background: url("../assets/Transparent_Saturn.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    animation: orbit6 12s linear infinite;
+  }
+  @keyframes orbit6 {
+    from {
+      transform: rotate(0deg) translateX(315px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(315px) rotate(-360deg);
+    }
+  }
+  .uranus_orbit {
+    height: 750px;
+    width: 750px;
+  }
+  .uranus {
+    height: 40px;
+    width: 40px;
+    background: linear-gradient(#d5fbfc, #bbe1e4, #93bbbe, #65868b);
+    border-radius: 50%;
+    position: absolute;
+    top: 47.5%;
+    left: 47.5%;
+    transform: translate(-50%, -50%);
+    animation: orbit7 14s linear infinite;
+  }
+  @keyframes orbit7 {
+    from {
+      transform: rotate(0deg) translateX(375px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(375px) rotate(-360deg);
+    }
+  }
+  .neptune_orbit {
+    height: 850px;
+    width: 850px;
+  }
+  .neptune {
+    height: 38px;
+    width: 38px;
+    background: linear-gradient(#212354, #3ee4e8, #3e66f9, #6081ff, #89f3ff);
+    border-radius: 50%;
+    position: absolute;
+    top: 48%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    animation: orbit8 17s linear infinite;
+  }
+  @keyframes orbit8 {
+    from {
+      transform: rotate(0deg) translateX(421px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(421px) rotate(-360deg);
+    }
+  }
+
 .modalSS {
     display: none;
     position: fixed;
@@ -83,28 +346,85 @@ body {
 }
 
 .modalSS-content {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    position: fixed;
+    width: 60%;
+    height: 90%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-image: url(../assets/background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: 20px;
-    border: 1px solid #ccc;
+    border-radius: 20%;
 }
-#modalImage {
-    width: 90%;
-    height: 90%;
-}
+
 #closeSSModal {
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 30px;
     font-size: 34px;
+    color: #F1BD81;
+}
+.modal-open {
+    overflow: hidden;
+}
+.introText {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    font-size: 1.1em;
+}
+.introText p {
+    padding-top: 2%;
+    padding-left: 3%;
+   color: white;
+    font-size: larger;
+    text-align: left;
+}
+#sun {
+  margin-left: -10%;
+  margin-bottom: -1%;
+  z-index: 0;
+  animation: rotation 350s infinite linear;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.sunText {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+.sunText button {
+    transition: all .1s ease;
+    height: 10%px;
+    width: 50%;
+    margin: 3%;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+    background-color: #81B5F1;
     color: black;
+    font-size: 1rem;
+}
+.sunText button:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,0.3); 
+  background-color:rgb(199, 144, 82);
+  border-radius: 10px;
+  color: white;
+
 }
 area {
     cursor: pointer;
@@ -117,33 +437,42 @@ area {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 30px;
+    justify-content: center;
+    padding-top: 90px;
+    margin-bottom: 70px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     text-align: justify;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 3s, transform 2.5s;
+    transition: opacity 4s, transform 2.5s;
 }
 .row.appear {
     opacity: 1;
     transform: translateY(0);
   }
 .row img{
-    width: 80%;
+    width: 70%;
     height: auto;
     border-radius: 10px;
-    margin-top: 3%;
     box-shadow: 0px 0px 10px rgba(195, 195, 195, 0.3);
 }
 #galaxyText {
-    width: 80%;
-    padding-bottom: 3%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: justify;
+    width: 70%;
+    height: 12vh;
+    background-color: rgba(241, 189, 129, 0.4);
+    border-radius: 0px 0px 10px 10px;
 }
-.row p {
-    width: 80%;
-    padding-left: 2%;
-    margin-top: 1%;
+#galaxyText p {
+    width: 90%;
+    font-size: 1.2em;
 
 }
 h2 {
@@ -151,23 +480,96 @@ h2 {
 }
 .voyagerSection {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     justify-content: center;
-    padding: 2%;
+    background-color: #fff;
 }
-.voyagerSection p {
+#voyagerFirstText {
     margin: 2%;
-    max-width: 50%;
+    padding-top: 2%;
+    max-width: 90%;
     font-family: Arial, Helvetica, sans-serif;
-    color: whitesmoke;
+    font-size: 1.1em;
+    color:#333;
+}
+#voyagerFirst {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+#comparisons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 90vw;
+    font-family: Arial, Helvetica, sans-serif;
+    border-color: #404040;
+    margin-bottom: 30px;
+
+}
+.distances {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight:900 ;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: end;
+    bottom: 0px;
+    width: 25%;
+    height: 100;
+
+    position: relative;
+}
+.distances ::after {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 10px;
+    background: radial-gradient(ellipse at center, rgba(129, 181, 241, 0.2) 0%, rgb(255, 255, 255) 100%);
+    bottom: 50px;
+    left: 30%; 
+    border-radius: 50%;
+    padding-bottom: 10px; 
+}
+.distances p {
+  margin-top: 40px;
+}
+#voyagerModelDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-evenly;
+    background: linear-gradient(to bottom, white, #81B5F1 30%);
+    width: 100%;
+    padding-top: 5%;
+}
+#voyagerFirstText2 {
+    margin: 4%;
+    max-width: 25%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    color: black;
+}
+#voyagerModel {
+    padding-top: 90px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70vw;
+    height: 90vh;
 }
 model-viewer {
     width: 100%;
     height: 90%;
     background-color: #ffffff;
+    border-radius: 10px;
+    background-size: cover;
   }
-  
-  
   .progress-bar {
     display: block;
     width: 33%;
@@ -196,40 +598,7 @@ model-viewer {
     float: left;
     transition: width 0.3s;
   }
-  
-  #ar-button {
-    background-image: url(ar_icon.png);
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
-    background-position: 12px 50%;
-    background-color: #fff;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-    bottom: 16px;
-    padding: 0px 16px 0px 40px;
-    font-family: Roboto Regular, Helvetica Neue, sans-serif;
-    font-size: 14px;
-    color:#4285f4;
-    height: 36px;
-    line-height: 36px;
-    border-radius: 18px;
-    border: 1px solid #DADCE0;
-  }
-  
-  #ar-button:active {
-    background-color: #E8EAED;
-  }
-  
-  #ar-button:focus {
-    outline: none;
-  }
-  
-  #ar-button:focus-visible {
-    outline: 1px solid #4285f4;
-  }
-  
+
   @keyframes circle {
     from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
     to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
@@ -247,40 +616,77 @@ model-viewer {
     animation: elongate 2s infinite ease-in-out alternate;
     display: none;
   }
-  
-  model-viewer[ar-status="session-started"] > #ar-prompt {
-    display: block;
-  }
-  
-  model-viewer > #ar-prompt > img {
-    animation: circle 4s linear infinite;
-  }
-#voyagerVid {
-    margin: 2%;
+#modelText {
+    font-family: Arial, Helvetica, sans-serif;  
+}
+#voyagerSecond {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.voyager-container {
+    height: 100%;
+    position: relative;
+    margin-bottom: 50px;
+}
+.voyager-text {
+    display: none;
+}
+
+#voyagerSecondText {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    color: #333;
+}
+.voyager-container:hover .voyager-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    padding: 0px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: all 0.3s;
+    font-size: x-large;
+}
+#voyagerJourney {
+  width: 100%;
 }
 #planetarium {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    flex-direction: column;
-    padding-bottom: 4%;
+    flex-direction: row;
+    padding: 2%;
 }
 .planetText {
     color: white;
+    width: 20%;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 4%;
+    font-size: x-large;
+}
+#skyLive {
+    width: 70%;
 }
 #apod-box {
- display: flex;
- height: 1000px;
- width: 100%;
+    display: flex;
+    height: max-content;
+    width: 100%;
 }
 #APOD {
- color: rgb(44, 44, 44);
- font-family: Verdana, Geneva, Tahoma, sans-serif;
- background-color: whitesmoke ;
- width: 100%;
-padding-bottom: 5%;
+    color: rgb(44, 44, 44);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: whitesmoke ;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 5%;
 }
 #boxTitle {
     text-align: center;
@@ -290,8 +696,9 @@ padding-bottom: 5%;
     display: block;
     margin: 40px;
     max-width: 800px;
-    max-height: 750px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    height: max-content;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 H3 {
     text-align: left;
@@ -308,13 +715,11 @@ H3 {
 }
 #apod-container {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     flex-wrap: nowrap;
     margin: auto;
     align-items: center;
     width: 90vw;
-    height: max-content;
+    height: fit-content;
     background-color: white;
     
 }
@@ -325,6 +730,7 @@ H3 {
 }
 #apod-text {
     height: fit-content;
+    overflow: auto;
     background-color: white;
     color: black;
     padding-bottom: 30px;
@@ -336,15 +742,24 @@ H3 {
  align-items: center;
 }
 #apod-box button {
-    height: 50px;
-    width: 150px;
+    transition: all .2s ease;
+    height: 25%;
+    width: 25%;
+    padding: 10px;
     text-align: center;
     border-radius: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     cursor: pointer;
+    background-color: #81B5F1;
+    color: black;
+    font-size: 1rem;
+    border-width: 0;
 }
 #apod-box button:hover {
-    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+  box-shadow: 0 0 11px rgba(33,33,33,0.3); 
+  background-color:rgb(199, 144, 82);
+  border-radius: 10px;
+  color: white;
 }
 .modal {
     display: none;
@@ -431,6 +846,40 @@ H3 {
     margin: 30px;
     align-self: center;
 }
+#loading-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+  }
+  
+  #planet {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    animation: spin 2s ease-in-out infinite;
+    background-image: url('../assets/earth_4k_stock_by_hameed_db5roja-fullview.png'); 
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    transform-style: preserve-3d; 
+}
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(520deg);
+    }
+  }
 #nasaResources {
     background-color: white;
     padding-bottom: 50px;
@@ -461,6 +910,7 @@ H3 {
 }
 .nasa-image:hover {
     transform:scale(1.1);
+    opacity: 90%;
 }
 footer {
     color: antiquewhite;

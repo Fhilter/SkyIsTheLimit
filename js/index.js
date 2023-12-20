@@ -1,3 +1,4 @@
+//API fetch from NASA's picture of the day
 const apiKey = "GYiSRpUWuQgABchLBHyI2VAd3mF9tXBd7IHtXFfw";
 
 const apodModalImage = document.getElementById("apod-modal-image");
@@ -77,43 +78,78 @@ function refreshAPOD() {
   const randomDate = getRandomAPODDate();
   const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${randomDate}`;
 
+  const loadingContainer = document.getElementById('loading-container');
+  loadingContainer.style.display = 'block';
+
+  // Set the minimum display time in milliseconds (e.g., 2000 milliseconds = 2 seconds)
+  const minimumDisplayTime = 2000; 
+
   // Fetch and update APOD data
   fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
-      apodModalImage.src = data.url;
-      apodModalTitle.textContent = data.title;
-      apodModalDate.textContent = data.date;
-      apodModalDescription.textContent = data.explanation;
+      const timeElapsed = Date.now() - startTime;
+      if (timeElapsed < minimumDisplayTime) {
+        // If the minimum display time hasn't passed, delay the hiding of the loading screen
+        setTimeout(() => {
+          loadingContainer.style.display = 'none';
+          updateAPODContent(data);
+        }, minimumDisplayTime - timeElapsed);
+      } else {
+        // If the minimum display time has passed, hide the loading screen immediately
+        loadingContainer.style.display = 'none';
+        updateAPODContent(data);
+      }
     })
     .catch((error) => {
+      loadingContainer.style.display = 'none';
       console.error("Error fetching APOD data:", error);
       apodModalContainer.innerHTML =
         "An error occurred while fetching the APOD data.";
     });
+
+  // Record the start time before the fetch request
+  const startTime = Date.now();
 }
 
-//Modal for solar system onclick on Milky Way image
+function updateAPODContent(data) {
+  // Update the APOD content with the retrieved data
+  const apodModalImage = document.getElementById('apod-modal-image');
+  const apodModalTitle = document.getElementById('apod-modal-title');
+  const apodModalDate = document.getElementById('apod-modal-date');
+  const apodModalDescription = document.getElementById('apod-modal-description');
+
+  apodModalImage.src = data.url;
+  apodModalTitle.textContent = data.title;
+  apodModalDate.textContent = data.date;
+  apodModalDescription.textContent = data.explanation;
+}
+
+
+
+//Reveal modal for solar system contained in milkyway image
 const modal = document.getElementById('myModal');
-const modalImage = document.getElementById('modalImage');
+const modalImage = document.getElementById('solarSystemOrbits');
 const closeSSModal = document.getElementById('closeSSModal');
 
-
 const areas = document.querySelectorAll('area');
+const body = document.body;
 
 areas.forEach(area => {
     area.addEventListener('click', function() {
-      console.log("Area clicked!");
         const imageSource = this.getAttribute('data-image');
         modalImage.src = imageSource;
         modal.style.display = 'block';
+        body.classList.add('modal-open');
     });
 });
 
 closeSSModal.addEventListener('click', function() {
     modal.style.display = 'none';
+    body.classList.remove('modal-open');
 });
 
+//scroll behaviour for the rows of galaxy images to appear
 const handleScroll = () => {
   const rows = document.querySelectorAll('.row');
   const windowBottom = window.scrollY + window.innerHeight;
@@ -129,6 +165,5 @@ const handleScroll = () => {
 
 // Initial check for elements in view on page load
 handleScroll();
-
-// Listen for scroll events
 window.addEventListener('scroll', handleScroll);
+

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, intital-scale=1.0" />
     <title>SkyisTheLimit</title>
     <link rel="stylesheet" type="text/css" href="./styles/style.css" />
     <link rel="icon" href="./assets/logo.png" />
@@ -11,7 +13,6 @@
 
         /* Set a specific height */
         height: 100vh;
-        
 
         /* Create the parallax scrolling effect */
         background-attachment: fixed;
@@ -20,15 +21,19 @@
         background-size: cover;
       }
     </style>
+    <script src="./js/voyagerModel.js"></script>
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"
+    ></script>
+    <script src="./js/index.js" defer></script>
   </head>
+  
   <body>
     <div id="parallax">
       <img id="logo" src="./assets/logo.png" alt="logo" />
       <h1>TheSkyisTheLimit</h1>
     </div>
-
-    <br />
-
     <div id="container">
       <div class="intro">
         <h2>"A long time ago in a galaxy far, far away...."</h2>
@@ -50,24 +55,67 @@
         <div id="myModal" class="modalSS">
           <div class="modalSS-content">
             <span id="closeSSModal" style="cursor: pointer">&times;</span>
-            <img id="modalImage" src="" alt="Solar System image" />
-            <div class="sunText">
-              <p>
-                Our star, the Sun, is just one of hundreds of
-                billions of stars swirling within an enormous cosmic place called the
-                Milky Way Galaxy? The Milky Way is a huge collection of stars, dust
-                and gas. It's called a spiral galaxy because if you could view it from
-                the top or bottom, it would look like a spinning pinwheel. The Sun is
-                located on one of the spiral arms, about 25,000 light-years away from
-                the center of the galaxy. Even if you could travel at the speed of
-                light (300,000 kilometers, or 186,000 miles, per second), it would
-                take you about 25,000 years to reach the middle of the Milky Way.
-              </p>
+            <div id="solarSystemOrbits">
+              <div class="sun"></div>
+              <div class="mercury_orbit">
+                <div class="mercury"></div>
+              </div>
+              <div class="venus_orbit">
+                <div class="venus"></div>
+              </div>
+              <div class="earth_orbit">
+                <div class="earth">
+                  <div class="moon_orbit">
+                    <div class="moon"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="mars_orbit">
+                <div class="mars"></div>
+              </div>
+              <div class="jupiter_orbit">
+                <div class="jupiter"></div>
+              </div>
+              <div class="saturn_orbit">
+                <div class="saturn">
+                  <div class="saturn_ring"></div>
+                </div>
+              </div>
+              <div class="uranus_orbit">
+                <div class="uranus"></div>
+              </div>
+              <div class="neptune_orbit">
+                <div class="neptune"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       <div class="introText">
+        <div class="sunText">
+          <img
+            id="sun"
+            src="./assets/sun.png"
+            alt="the sun"
+            style="background-color: transparent"
+          />
+          <p>
+            Our star, the Sun, is just one of hundreds of billions of stars
+            swirling within an enormous cosmic place called the Milky Way
+            Galaxy. The Milky Way is a huge collection of stars, dust and gas.
+            The Sun is located on one of the spiral arms, about 25,000
+            light-years away from the center of the galaxy. Even if you could
+            travel at the speed of light (300,000 kilometers, or 186,000 miles,
+            per second), it would take you about 25,000 years to reach the
+            middle of the Milky Way.
+          </p>
+          <button
+            onclick="window.open('https://theskylive.com/3dsolarsystem', '_blank')"
+          >
+            Explore a 3D Milky Way
+          </button>
+        </div>
         <p>
           "Very cool," you say, "but do we live in the only galaxy?" Nope, there
           are billions in the universe that we can see, and possibly trillions
@@ -76,6 +124,7 @@
       </div>
       <div class="galaxyContainer">
         <div class="row">
+          <h2>The Cigar Galaxy</h2>
           <img
             id="cigar"
             src="./assets/m82_cigar.jpg"
@@ -83,16 +132,17 @@
             loading="lazy"
           />
           <div id="galaxyText">
-            <p></p>
-            <h2>The Cigar Galaxy</h2>
-            M82 Galaxy Messier 82 is a starburst galaxy approximately 12 million
-            light-years away in the constellation Ursa Major. It is the
-            second-largest member of the M81 Group, with the D₂₅ isophotal
-            diameter of 12.52 kiloparsecs.
+            <p>
+              M82 Galaxy Messier 82 is a starburst galaxy approximately 12
+              million light-years away in the constellation Ursa Major. It is
+              the second-largest member of the M81 Group, with the D₂₅ isophotal
+              diameter of 12.52 kiloparsecs.
+            </p>
           </div>
         </div>
 
         <div class="row">
+          <h2>The Pinwheel Galaxy</h2>
           <img
             id="pinwheel"
             src="./assets/m101_pinwheel.jpg"
@@ -100,17 +150,18 @@
             loading="lazy"
           />
           <div id="galaxyText">
-            <p></p>
-            <h2>The Pinwheel Galaxy</h2>
-            The Pinwheel Galaxy is a face-on spiral galaxy 21 million
-            light-years away from Earth in the constellation Ursa Major. It was
-            discovered by Pierre Méchain in 1781 and was communicated that year
-            to Charles Messier, who verified its position for inclusion in the
-            Messier Catalogue as one of its final entries.
+            <p>
+              The Pinwheel Galaxy is a face-on spiral galaxy 21 million
+              light-years away from Earth in the constellation Ursa Major. It
+              was discovered by Pierre Méchain in 1781 and was communicated that
+              year to Charles Messier, who verified its position for inclusion
+              in the Messier Catalogue as one of its final entries.
+            </p>
           </div>
         </div>
 
         <div class="row">
+          <h2>The Sombrero Galaxy</h2>
           <img
             id="sombrero"
             src="./assets/m104_sombrero.jpg"
@@ -118,72 +169,97 @@
           />
           <div id="galaxyText">
             <p>
-            <h2>The Sombrero Galaxy</h2>
-            The Sombrero Galaxy is a peculiar galaxy of unclear classification
-            in the constellation borders of Virgo and Corvus, being about 9.55
-            megaparsecs from the Milky Way galaxy. It is a member of the Virgo
-            II Groups, a series of galaxies and galaxy clusters strung out from
-            the southern edge of the Virgo Supercluster.
-          </p>
+              The Sombrero Galaxy is a peculiar galaxy of unclear classification
+              in the constellation borders of Virgo and Corvus, being about 9.55
+              megaparsecs from the Milky Way galaxy. It is a member of the Virgo
+              II Groups, a series of galaxies and galaxy clusters strung out
+              from the southern edge of the Virgo Supercluster.
+            </p>
           </div>
         </div>
       </div>
       <div>
         <div class="voyagerSection">
-          <iframe src="" frameborder="0">
-            <model-viewer src="./assets/Voyager.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1">
-              <div class="progress-bar hide" slot="progress-bar">
-                  <div class="update-bar"></div>
+          <div id="voyagerFirst">
+            <p id="voyagerFirstText">
+              Of course these galaxies are, well,
+              <a href="https://en.wikipedia.org/wiki/Light-year">LIGHT-YEARS</a>
+              away and we will probably never reach them. The furthest man-made
+              object from earth right now is the Voyager 1 probe, followed by
+              its twin Voyager 2.
+              <br /><br />As of February 25, 2023, Voyager 1 was about 23.1
+              billion kilometers (14.3 billion miles) away from Earth, which is
+              approximately 0.002 light years.<br /><br />Or in other words...
+            </p>
+            <div id="comparisons">
+              <div class="distances">
+                <p>139,926,000,000,000 Bananas</p>
+                <img width="30%" src="/assets/banana outline.png" />
               </div>
-              <button slot="ar-button" id="ar-button">
-                View in your space
-            </button>
-            <div id="ar-prompt">
-                <img src="./assets/ar_hand_prompt.png">
+              <div class="distances">
+                <p>4,693,877,551,020 Giraffes</p>
+                <img width="40%" src="/assets/giraffe outline.png" />
+              </div>
+              <div class="distances">
+                <p>71,250,000,000 Eiffel Towers</p>
+                <img width="60%" src="/assets/eiffel 2small.jpg" />
+              </div>
+              <div class="distances">
+                <p>27,915,942,028 Burj Khalifas</p>
+                <img width="80%" src="/assets/Dubai-Burj-Khalifa-512.png" />
+              </div>
             </div>
-          </model-viewer>
-          </iframe>
-          <iframe
-          id="voyagerVid"
-            width="1060"
-            height="415"
-            src="https://www.youtube.com/embed/aR6oV8kJKf4?si=nFC8m9x02zCc5eiV"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-          <p id="Voyager">
-            Of course these galaxies are, well, <a href="https://en.wikipedia.org/wiki/Light-year">LIGHTYEARS</a> away and we will
-            probably never reach them. The furthest man-made object from earth
-            right now is the Voyager 1 probe. As of February 25, 2023, Voyager 1
-            was about 14.3 billion miles (23.1 billion kilometers) away
-            from Earth, which is approximately 0.002 light years. At its current
-            speed of about 38,000 miles per hour (61,000 kilometers per hour),
-            it would take approximately 17,000 years to travel one light year
-            away from Earth. 
-            If you want to see what this incredible spacecraft
-            carries, you can watch this 360 degree video and pan around for
-            yourself. If you want to know more, make sure you visit the
-            <a href="https://voyager.jpl.nasa.gov/mission/status/"
-              >VOYAGER PROBE</a
-            >
-            page on NASA's site to learn more about this amazing journey, and
-            the current location of this probe.
-          </p>
+            <div id="voyagerModelDiv">
+              <p id="voyagerFirstText2">
+                Even though it's moving at a blistering speed of about 61,000
+                kilometers per hour (38,000 miles per hour), it would still take
+                Voyager 1 approximately 17,000 years to travel one light year
+                away from Earth. <br /><br />Luckily, this interactive 3D model
+                is a lot closer! You can pan around and zoom in to see what it's
+                like.
+              </p>
+              <div id="voyagerModel">
+                <model-viewer
+                  src="./assets/Voyager.glb"
+                  ar
+                  ar-modes="webxr scene-viewer quick-look"
+                  camera-controls
+                  poster="assets\poster.webp"
+                  shadow-intensity="1"
+                >
+                </model-viewer>
+              </div>
+            </div>
+          </div>
+          <div id="voyagerSecond">
+            <div class="voyager-container">
+              <div class="voyager-image">
+                <img
+                  id="voyagerJourney"
+                  src="./assets/10742.jpg"
+                  alt="Voyager Image"
+                />
+              </div>
+              <div class="voyager-text">
+                <p id="voyagerSecondText">
+                  If you want to see what this incredible spacecraft carries,
+                  and follow its journey, make sure you visit the<br />
+                  <a href="https://voyager.jpl.nasa.gov/">VOYAGER PROBE</a
+                  ><br />
+                  page on NASA's JPL site to learn more about this amazing probe
+                  and its journey, as well as current location.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
         <div id="planetarium">
           <p class="planetText">
-            While the Voyager probe is flying through space at 17 km/s, we're
-            stuck here on Terra Firma. The cameras on the probe constantly see
-            things from ever-changing angles, but for us, the sky looks pretty
-            much the same every night, depending on which hemisphere you're in
-            and the rotation of the earth. Seeing what Voyager has seen is truly
-            breath-taking, but even seeing the night sky away from man-made
-            lights is still a wonderful experience. <br /><br />
-            Are you interested in being an astronomer? You can pretend to do
-            just that from right here, with this intereactive planetarium from
+            The cameras on the probe constantly see things from ever-changing
+            angles, but for us on Terra Firma, the sky looks pretty much the
+            same every night. <br /><br />
+            Have you ever wanted to explore the universe? You can pretend to do
+            just that from right here, with this interactive planetarium from
             SkyLive. Have a look around and see if you can spot anything you
             recognize!
           </p>
@@ -209,7 +285,7 @@
             <div id="buttonBox">
               <p>Want to see more images from NASA?</p>
               <button type="button" class="button" onclick="openModal()">
-                Access the APOD archives
+                Browse the APOD archives
               </button>
             </div>
             <div id="apod-modal" class="modal">
@@ -217,6 +293,9 @@
               <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
                 <div id="apod-modal-container">
+                  <div id="loading-container">
+                    <div id="planet"></div>
+                  </div>
                   <img id="apod-modal-image" src="" alt="APOD" />
                   <div id="modalText">
                     <h2 id="apod-modal-title"></h2>
@@ -274,7 +353,6 @@
       </div>
     </div>
 
-    <script src="./js/index.js"></script>
     <footer>
       <p id="footerText">copyright P.T 2023</p>
     </footer>
