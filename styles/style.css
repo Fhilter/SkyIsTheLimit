@@ -743,8 +743,8 @@ H3 {
 }
 #apod-box button {
     transition: all .2s ease;
-    height: 25%;
-    width: 25%;
+    height: 60px;
+    width: 150px;
     padding: 10px;
     text-align: center;
     border-radius: 10px;
