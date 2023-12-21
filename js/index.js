@@ -78,11 +78,11 @@ function refreshAPOD() {
   const randomDate = getRandomAPODDate();
   const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${randomDate}`;
 
-  const loadingContainer = document.getElementById('loading-container');
-  loadingContainer.style.display = 'block';
+  const loadingContainer = document.getElementById("loading-container");
+  loadingContainer.style.display = "block";
 
   // Set the minimum display time in milliseconds (e.g., 2000 milliseconds = 2 seconds)
-  const minimumDisplayTime = 2000; 
+  const minimumDisplayTime = 2000;
 
   // Fetch and update APOD data
   fetch(apiUrl)
@@ -92,17 +92,17 @@ function refreshAPOD() {
       if (timeElapsed < minimumDisplayTime) {
         // If the minimum display time hasn't passed, delay the hiding of the loading screen
         setTimeout(() => {
-          loadingContainer.style.display = 'none';
+          loadingContainer.style.display = "none";
           updateAPODContent(data);
         }, minimumDisplayTime - timeElapsed);
       } else {
         // If the minimum display time has passed, hide the loading screen immediately
-        loadingContainer.style.display = 'none';
+        loadingContainer.style.display = "none";
         updateAPODContent(data);
       }
     })
     .catch((error) => {
-      loadingContainer.style.display = 'none';
+      loadingContainer.style.display = "none";
       console.error("Error fetching APOD data:", error);
       apodModalContainer.innerHTML =
         "An error occurred while fetching the APOD data.";
@@ -114,10 +114,12 @@ function refreshAPOD() {
 
 function updateAPODContent(data) {
   // Update the APOD content with the retrieved data
-  const apodModalImage = document.getElementById('apod-modal-image');
-  const apodModalTitle = document.getElementById('apod-modal-title');
-  const apodModalDate = document.getElementById('apod-modal-date');
-  const apodModalDescription = document.getElementById('apod-modal-description');
+  const apodModalImage = document.getElementById("apod-modal-image");
+  const apodModalTitle = document.getElementById("apod-modal-title");
+  const apodModalDate = document.getElementById("apod-modal-date");
+  const apodModalDescription = document.getElementById(
+    "apod-modal-description"
+  );
 
   apodModalImage.src = data.url;
   apodModalTitle.textContent = data.title;
@@ -125,45 +127,42 @@ function updateAPODContent(data) {
   apodModalDescription.textContent = data.explanation;
 }
 
-
-
 //Reveal modal for solar system contained in milkyway image
-const modal = document.getElementById('myModal');
-const modalImage = document.getElementById('solarSystemOrbits');
-const closeSSModal = document.getElementById('closeSSModal');
+const modal = document.getElementById("myModal");
+const modalImage = document.getElementById("solarSystemOrbits");
+const closeSSModal = document.getElementById("closeSSModal");
 
-const areas = document.querySelectorAll('area');
+const areas = document.querySelectorAll("area");
 const body = document.body;
 
-areas.forEach(area => {
-    area.addEventListener('click', function() {
-        const imageSource = this.getAttribute('data-image');
-        modalImage.src = imageSource;
-        modal.style.display = 'block';
-        body.classList.add('modal-open');
-    });
+areas.forEach((area) => {
+  area.addEventListener("click", function () {
+    const imageSource = this.getAttribute("data-image");
+    modalImage.src = imageSource;
+    modal.style.display = "block";
+    body.classList.add("modal-open");
+  });
 });
 
-closeSSModal.addEventListener('click', function() {
-    modal.style.display = 'none';
-    body.classList.remove('modal-open');
+closeSSModal.addEventListener("click", function () {
+  modal.style.display = "none";
+  body.classList.remove("modal-open");
 });
 
 //scroll behaviour for the rows of galaxy images to appear
 const handleScroll = () => {
-  const rows = document.querySelectorAll('.row');
+  const rows = document.querySelectorAll(".row");
   const windowBottom = window.scrollY + window.innerHeight;
 
   rows.forEach((row) => {
     const rowTop = row.getBoundingClientRect().top + window.scrollY;
 
     if (rowTop < windowBottom) {
-      row.classList.add('appear');
+      row.classList.add("appear");
     }
   });
-}
+};
 
 // Initial check for elements in view on page load
 handleScroll();
-window.addEventListener('scroll', handleScroll);
-
+window.addEventListener("scroll", handleScroll);
