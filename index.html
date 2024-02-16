@@ -26,7 +26,8 @@
       type="module"
       src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"
     ></script>
-    <script src="./js/index.js" defer></script>
+    <script defer src="./js/magnifier.js"></script>
+    <script defer src="./js/index.js"></script>
   </head>
 
   <body>
@@ -55,6 +56,7 @@
         <div id="myModal" class="modalSS">
           <div class="modalSS-content">
             <span id="closeSSModal" style="cursor: pointer">&times;</span>
+            <!-- <p>Here is some text</p> -->
             <div id="solarSystemOrbits">
               <div class="sun"></div>
               <div class="mercury_orbit">
@@ -234,24 +236,21 @@
             </div>
           </div>
           <div id="voyagerSecond">
-            <div class="voyager-container">
-              <div class="voyager-image">
+            <div class="voyager-image-container">             
                 <img
                   id="voyagerJourney"
                   src="./assets/10742.jpg"
                   alt="Voyager Image"
                 />
-              </div>
-              <div class="voyager-text">
-                <p id="voyagerSecondText">
-                  If you want to see what this incredible spacecraft carries,
-                  and follow its journey, make sure you visit the<br />
-                  <a href="https://voyager.jpl.nasa.gov/">VOYAGER PROBE</a
-                  ><br />
-                  page on NASA's JPL site to learn more about this amazing probe
-                  and its journey, as well as current location.
-                </p>
-              </div>
+            </div>             
+            <div style="margin: 0; padding: 0;" class="voyager-text">
+              <p id="voyagerSecondText">
+                Visit the voyager probe page on <span />
+                <a href="https://voyager.jpl.nasa.gov/">NASA's JET PROPULSION LABS</a
+                ><span/>
+                site to learn more about this amazing probe
+                and its journey, as well as current location.
+              </p>
             </div>
           </div>
         </div>
@@ -296,7 +295,9 @@
                 <span class="close" onclick="closeModal()">&times;</span>
                 <div id="apod-modal-container">
                   <div id="loading-container">
-                    <div id="planet"></div>
+                    <div class="wrap">
+                      <div id="planet"></div>
+                    </div>
                   </div>
                   <img id="apod-modal-image" src="" alt="APOD" />
                   <div id="modalText">

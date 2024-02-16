@@ -81,37 +81,31 @@ function refreshAPOD() {
   const loadingContainer = document.getElementById("loading-container");
   loadingContainer.style.display = "block";
 
-  // Set the minimum display time in milliseconds (e.g., 2000 milliseconds = 2 seconds)
-  const minimumDisplayTime = 2000;
-
-  // Fetch and update APOD data
+  // Fetch APOD data
   fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
-      const timeElapsed = Date.now() - startTime;
-      if (timeElapsed < minimumDisplayTime) {
-        // If the minimum display time hasn't passed, delay the hiding of the loading screen
-        setTimeout(() => {
-          loadingContainer.style.display = "none";
-          updateAPODContent(data);
-        }, minimumDisplayTime - timeElapsed);
-      } else {
-        // If the minimum display time has passed, hide the loading screen immediately
-        loadingContainer.style.display = "none";
-        updateAPODContent(data);
-      }
+      // Update APOD content during the loading phase
+      updateAPODContent(data);
+
+      // Set the minimum display time in milliseconds (e.g., 2000 milliseconds = 2 seconds)
+      const minimumDisplayTime = 2000;
+
+      // Wait for the minimum display time
+      return new Promise(resolve => setTimeout(resolve, minimumDisplayTime));
+    })
+    .then(() => {
+      // Hide the loading screen after the minimum display time
+      loadingContainer.style.display = "none";
     })
     .catch((error) => {
       loadingContainer.style.display = "none";
       console.error("Error fetching APOD data:", error);
-      apodModalContainer.innerHTML =
-        "An error occurred while fetching the APOD data.";
+      // Display an error message if fetching data fails
+      const apodModalContainer = document.getElementById("apod-modal-container");
+      apodModalContainer.innerHTML = "An error occurred while fetching the APOD data.";
     });
-
-  // Record the start time before the fetch request
-  const startTime = Date.now();
 }
-
 function updateAPODContent(data) {
   // Update the APOD content with the retrieved data
   const apodModalImage = document.getElementById("apod-modal-image");
@@ -126,6 +120,8 @@ function updateAPODContent(data) {
   apodModalDate.textContent = data.date;
   apodModalDescription.textContent = data.explanation;
 }
+
+
 
 //Reveal modal for solar system contained in milkyway image
 const modal = document.getElementById("myModal");
@@ -156,13 +152,42 @@ const handleScroll = () => {
 
   rows.forEach((row) => {
     const rowTop = row.getBoundingClientRect().top + window.scrollY;
+    const rowBottom = rowTop + row.offsetHeight;
 
-    if (rowTop < windowBottom) {
-      row.classList.add("appear");
+    // Check if the row is within the viewport
+    if (rowTop < windowBottom && rowBottom > window.scrollY) {
+      // Calculate the percentage of the row visible in the viewport
+      const percentVisible = Math.min(1, (windowBottom - rowTop) / row.offsetHeight);
+
+      // Set opacity based on the percentage visible
+      row.style.opacity = percentVisible;
+
+      // You can also add other transition effects here if needed
+      // For example, you can adjust translateY based on the visibility
+      row.style.transform = `translateY(${(1 - percentVisible) * 20}px)`;
     }
   });
 };
 
-// Initial check for elements in view on page load
-handleScroll();
+// Add an event listener for the scroll event
 window.addEventListener("scroll", handleScroll);
+
+
+
+// Zoom behaviour for voyager journey img
+
+// const container = document.getElementById("voyager-container");
+// const img = document.getElementById("voyagerJourney");
+// container.addEventListener("mousemove", onZoom);
+// container.addEventListener("mouseover", onZoom);
+// container.addEventListener("mouseleave", offZoom);
+// function onZoom(e) {
+//     const x = e.clientX - e.target.offsetLeft;
+//     const y = e.clientY - e.target.offsetTop;
+//     img.style.transformOrigin = `${x}px ${y}px`;
+//     img.style.transform = "scale(1.5)";
+// }
+// function offZoom(e) {
+//     img.style.transformOrigin = `center center`;
+//     img.style.transform = "scale(1)";
+// }
